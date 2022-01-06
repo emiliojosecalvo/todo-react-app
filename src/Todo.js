@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 
 class Todo extends Component {
-    static defaultProps = {
-        task: 'Clean kitchen'
+    constructor(props) {
+        super(props);
+        this.handleDelete = this.handleDelete.bind(this)
+    }
+    handleDelete() {
+        this.props.deleteTodo(this.props.id)
+    }
+    handleEdit() {
+
     }
     render() {
         return (
             <div>
-                <span>{this.props.task} </span>
-                <button> Edit</button>
-                <button onCl> Delete</button>
+                <span>{this.props.name} </span>
+                <button onClick={this.handleEdit}> Edit</button>
+                <button onClick={this.handleDelete}> Delete</button>
             </div>
         )
     }
