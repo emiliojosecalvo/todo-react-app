@@ -26,6 +26,7 @@ class NewTodoForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor='name'>New Todo</label>
                     <input
+                        type='text'
                         name='name'
                         id='name'
                         value={this.state.name}
