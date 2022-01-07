@@ -4,7 +4,7 @@ import './Todo.css'
 class Todo extends Component {
     constructor(props) {
         super(props);
-        this.state = { isEditing: false, newname: this.props.name, isDone: false }
+        this.state = { isEditing: false, newname: this.props.name }
         this.handleDelete = this.handleDelete.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -28,15 +28,9 @@ class Todo extends Component {
         this.handleEdit();
     }
     toggleTask() {
-        this.setState({ isDone: !this.state.isDone })
+        this.props.toggleCompleted(this.props.id);
     }
     render() {
-        let cTodo;
-        if (this.state.isDone) {
-            cTodo = 'Finished'
-        } else {
-            cTodo = ''
-        }
         let result;
         if (this.state.isEditing) {
             result =
@@ -56,7 +50,7 @@ class Todo extends Component {
                 (
                     <div>
                         <li>
-                            <span onClick={this.toggleTask} className={cTodo}>{this.props.name} </span>
+                            <span className={this.props.completed ? 'Finished' : ''} onClick={this.toggleTask}> {this.props.name} </span>
                             <button onClick={this.handleEdit}> Edit</button>
                             <button onClick={this.handleDelete}> Delete</button>
                         </li>

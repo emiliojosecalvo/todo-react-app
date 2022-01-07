@@ -1,3 +1,6 @@
 .Finished {
   text-decoration: line-through;
+color: grey;
+  font-style: oblique;
+
 }
