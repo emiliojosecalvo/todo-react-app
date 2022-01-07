@@ -5,7 +5,8 @@ box-sizing: border-box;
 }
 
 body {
-background: linear-gradient(90deg,#003300, #004400, #005500 ) ;
+/* background: linear-gradient(90deg,#003300, #004400, #005500 ) ; */
+background-color: #8b8c89;
   font-family: 'Ubuntu', sans-serif;
 font-size: 1.1rem;
 height: 100%;

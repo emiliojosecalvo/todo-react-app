@@ -17,25 +17,26 @@ class NewTodoForm extends Component {
     }
     handleSubmit(ev) {
         ev.preventDefault();
-        let newTodo = { ...this.state, id: uuidv4(), completed: false };
-        this.props.addTodo(newTodo);
-        this.setState({ name: '' })
+        if (this.state.name.length > 0) {
+            let newTodo = { ...this.state, id: uuidv4(), completed: false };
+            this.props.addTodo(newTodo);
+            this.setState({ name: '' })
+        }
     }
     render() {
         return (
-            <div >
-                <form className='NewTodoForm' onSubmit={this.handleSubmit}>
-                    <label htmlFor='name'>New Todo</label>
-                    <input
-                        type='text'
-                        name='name'
-                        id='name'
-                        value={this.state.name}
-                        onChange={this.handleChange}
-                    ></input>
-                    <button>Add New Todo</button>
-                </form>
-            </div>
+            <form className='NewTodoForm' onSubmit={this.handleSubmit}>
+                <label htmlFor='name'>New Todo</label>
+                <input
+                    maxLength="20"
+                    type='text'
+                    name='name'
+                    id='name'
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                ></input>
+                <button>Add</button>
+            </form>
         )
     }
 }

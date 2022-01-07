@@ -24,8 +24,10 @@ class Todo extends Component {
     }
     handleSubmit(ev) {
         ev.preventDefault();
-        this.props.updateTodo(this.props.id, this.state.newname);
-        this.handleEdit();
+        if (this.state.newname.length > 0) {
+            this.props.updateTodo(this.props.id, this.state.newname);
+            this.handleEdit();
+        }
     }
     toggleTask() {
         this.props.toggleCompleted(this.props.id);
@@ -37,6 +39,7 @@ class Todo extends Component {
                 (<div className='Todo'>
                     <form className='Todo-edit-form' onSubmit={this.handleSubmit}>
                         <input
+                            maxLength="20"
                             type='text'
                             name='newname'
                             value={this.state.newname}
@@ -53,10 +56,10 @@ class Todo extends Component {
                     </li>
                     <div className='Todo-buttons'>
                         <button onClick={this.handleEdit}>
-                            <i class="fas fa-pencil-alt"></i>
+                            <i className="fas fa-pencil-alt"></i>
                         </button>
                         <button onClick={this.handleDelete}>
-                            <i class="fas fa-trash-alt"></i>
+                            <i className="fas fa-trash-alt"></i>
                         </button>
                     </div>
                 </div>)

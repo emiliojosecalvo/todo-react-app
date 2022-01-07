@@ -1,11 +1,11 @@
 .Todo {
   display: flex;
-  margin: 0 -3rem 4px;
-  padding: 1.1rem 3rem;
-  height: 77px;
+height: 7vh;
+margin-top: 0.5rem;
+  padding: 1rem 0.5rem 1rem 0.5rem;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.2);
+  background: #6096ba;
   overflow: hidden;
   position: relative;
   transition: opacity 500ms ease-in-out;
@@ -31,7 +31,7 @@
   display: block;
   width: 0%;
   height: 2px;
-  background: #58b124;
+  background: #e7ecef;
   animation: strikeitem 0.3s ease-in 0s forwards;
 }
 
@@ -40,7 +40,6 @@
     width: calc(100% + 1rem);
   }
 }
-
 
 .Todo-buttons {
   flex-shrink: 0;
@@ -60,7 +59,6 @@
 
 .Todo-edit-form {
   display: flex;
-  flex-wrap: wrap;
 }
 .Todo-edit-form label {
   min-width: 100%;
@@ -68,7 +66,7 @@
   font-size: 1.3rem;
 }
 .Todo-edit-form input {
-  flex-grow: 1;
+min-width: 75%;
   border: none;
   background: #f7f1f1;
   padding: 0 1.5em;
@@ -77,18 +75,18 @@
 .Todo-edit-form button {
   padding: 0 1.3rem;
   border: none;
-  background: #43a30c;
+  background: #274c77;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  margin-left: 5px;
-  cursor: pointer;
-  transition: background 0.2s ease-out;
+  /* margin-left: 5px; */
+  /* cursor: pointer; */
+  /* transition: background 0.2s ease-out; */
 }
-.Todo-edit-form button:hover {
+/* .Todo-edit-form button:hover {
   background: #68ff10;
-}
+} */
 .Todo-edit-form input,
 .Todo-edit-form button {
   font-family: "Quicksand", sans-serif;
